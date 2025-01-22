@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Replace with your actual bot token
-	botToken := "7509984540:AAEhyQGkjYGYaTrZHMf6teNvffMPgX0RtgI"
+	botToken := ""
 
 	// Initialize the bot
 	bot, err := tele.NewBot(tele.Settings{
