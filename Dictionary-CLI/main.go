@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-"os/exec"
+	"os/exec"
 )
 
 
@@ -38,7 +38,7 @@ func getDefination(word string) {
 	if resp.StatusCode != http.StatusOK {
 		var errorResponse ErrorResponse
 		body, _ := io.ReadAll(resp.Body)
-		// Try parsing the error message from the API response
+
 		if err := json.Unmarshal(body, &errorResponse); err != nil {
 			fmt.Println("Error parsing response:", err)
 			return
@@ -81,14 +81,14 @@ func getDefination(word string) {
 
 
 func speakText(text string) {
-	cmd := exec.Command("flite", "-voice", "rms", "-t", text)
+	cmd := exec.Command("flite", "-voice", "slt", "-t", text)
 	err := cmd.Run()
 
 	if err != nil {
 		fmt.Println("Error speaking: ", err)
 	}
 }
-
+	
 func main(){
 	if len(os.Args) < 2 {
 		fmt.Printf("Usage: go run amin.go word")
