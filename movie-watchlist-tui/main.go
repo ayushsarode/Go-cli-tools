@@ -89,7 +89,7 @@ func (m model) View() string {
 // Saves the movie list to the database
 func saveToDatabase(movies []string, selected map[int]struct{}) tea.Cmd {
     return func() tea.Msg {
-        connStr := "host=localhost port=5432 user=postgres dbname=movie_watch_cli password=ayush1825 sslmode=disable"
+        connStr := "host=localhost port=5432 user=postgres dbname=movie_watch_cli password= sslmode=disable"
 
         db, err := sql.Open("postgres", connStr)
         if err != nil {
